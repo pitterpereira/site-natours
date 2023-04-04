@@ -3,6 +3,7 @@
   --light-green: rgba(126, 213, 111, 0.8);
   --medium-green: rgba(85, 197, 122);
   --dark-green: rgba(40, 180, 133, 0.8);
+  --white: rgba(255, 255, 255);
 }
 
 /* Reset básico de todos os elementos*/
@@ -42,4 +43,45 @@ body {
     100% 75vh,
     0 100%
   ); /* Posições X e Y de cada vértice do polígono, contando do superior da esquerda em sentido horário */
+  position: relative;
+}
+
+.logo-box {
+  position: absolute; /* Relativo ao header, pois está dentro dele */
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 3.5rem;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Alteração do ponto de movimentação da caixa */
+}
+
+/* h1 é o heading mais importante para SEO */
+.heading-primary {
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem;
 }
