@@ -1,8 +1,45 @@
-/*
-COLORS:
+/* Declaração de vriáveis */
+:root {
+  --light-green: rgba(126, 213, 111, 0.8);
+  --medium-green: rgba(85, 197, 122);
+  --dark-green: rgba(40, 180, 133, 0.8);
+}
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+/* Reset básico de todos os elementos*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-*/
+html {
+  font-size: 10px;
+}
+
+/* Informações colocadas no body para poderem ser herdadas */
+body {
+  padding: 30px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      var(--light-green),
+      var(--dark-green)
+    ),
+    url("../img/hero.jpg");
+  background-size: cover; /* Tamanho se adapta à tela */
+  background-position: top;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /* Posições X e Y de cada vértice do polígono, contando do superior da esquerda em sentido horário */
+}
