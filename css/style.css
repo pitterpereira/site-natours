@@ -4,6 +4,7 @@
   --medium-green: rgba(85, 197, 122);
   --dark-green: rgba(40, 180, 133, 0.8);
   --white: rgba(255, 255, 255);
+  --gray: rgb(119, 119, 119);
 }
 
 /* Reset básico de todos os elementos*/
@@ -24,7 +25,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #777;
+  color: var(--gray);
 }
 
 .header {
@@ -64,12 +65,14 @@ body {
     -50%,
     -50%
   ); /* Alteração do ponto de movimentação da caixa */
+  text-align: center;
 }
 
 /* h1 é o heading mais importante para SEO */
 .heading-primary {
-  color: var(--white);
+  margin-bottom: 6rem;
   text-transform: uppercase;
+  color: var(--white);
 }
 
 .heading-primary-main {
@@ -120,4 +123,29 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: var(--white);
+  color: var(--gray);
 }
