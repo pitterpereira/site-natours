@@ -21,7 +21,7 @@ html {
 
 /* Informações colocadas no body para poderem ser herdadas */
 body {
-  padding: 0.3rem;
+  padding: 3rem;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -51,8 +51,8 @@ body {
 
 .header__logo-box {
   position: absolute; /* Relativo ao header, pois está dentro dele */
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .header__logo {
@@ -167,7 +167,7 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: var(--white);
 }
 
