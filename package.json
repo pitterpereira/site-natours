@@ -1,0 +1,22 @@
+{
+  "name": "site-natours",
+  "version": "1.0.0",
+  "description": "Natours",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pitterpereira/site-natours.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pitterpereira/site-natours/issues"
+  },
+  "homepage": "https://github.com/pitterpereira/site-natours#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
