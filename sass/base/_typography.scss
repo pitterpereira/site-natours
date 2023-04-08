@@ -31,3 +31,27 @@ body {
     backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $light-green,
+    $dark-green
+  ); // Seta a cor gradiente no fundo
+  -webkit-background-clip: text; // Seta a cor para ser recortada no formato do texto
+  background-clip: text;
+  color: transparent; // Torna o texto transparente para o gradiente poder aparecer
+
+  letter-spacing: 0.2rem;
+
+  transition: all 0.2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg);
+    text-shadow: 0.5rem 1rem 2rem rgba($black, 0.2);
+  }
+}
