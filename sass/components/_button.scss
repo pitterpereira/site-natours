@@ -1,0 +1,55 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 5rem;
+    transition: all 0.2s ease-in-out;
+    position: relative; /* Para o efeito hover do botão novo que fica atrás */
+
+    &:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1rem 2rem rgba($black, 0.2);
+
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($black, 0.2);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%; /* Referente ao button */
+    width: 100%; /* Referente ao button */
+    border-radius: 5rem;
+    position: absolute; /* Relativo ao botão */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &--white {
+    background-color: $white;
+    color: $gray;
+
+    &::after {
+      background-color: $white;
+    }
+  }
+
+  &--animated {
+    animation: moveInBottom 0.3s ease-out 0.5s;
+    animation-fill-mode: backwards; /* Automaticamente coloca os estilos do estado 0% antes de a animação começar */
+  }
+}

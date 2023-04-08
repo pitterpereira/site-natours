@@ -1,0 +1,35 @@
+.header {
+  height: 95vh;
+  background: linear-gradient(to right bottom, $light-green, $dark-green),
+    url("../img/hero.jpg");
+  background-size: cover; /* Tamanho se adapta à tela */
+  background-position: top;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /* Posições X e Y de cada vértice do polígono, contando do superior da esquerda em sentido horário */
+  position: relative;
+
+  &__logo-box {
+    position: absolute; /* Relativo ao header, pois está dentro dele */
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(
+      -50%,
+      -50%
+    ); /* Alteração do ponto de movimentação da caixa */
+    text-align: center;
+  }
+}
