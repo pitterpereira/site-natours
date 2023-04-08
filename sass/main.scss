@@ -1,194 +1,190 @@
 /* Declaração de variáveis */
 
-  $light-green: rgba(126, 213, 111, 0.8);
-  $medium-green: rgba(85, 197, 122, 1);
-  $dark-green: rgba(40, 180, 133, 0.8);
-  $white: rgb(255, 255, 255);
-  $gray: rgb(119, 119, 119);
-  
-  *,
-  *::after,
-  *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-  }
-  
-  html {
-    font-size: 62.5%; /* Porcentagem do valor inicial ou de qualquer valor inserido pelo usuário */
-  }
-  
-  /* Informações colocadas no body para poderem ser herdadas */
-  body {
-    padding: 3rem;
-    box-sizing: border-box;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 1.7;
-    color: $gray;
-  }
-  
-  .header {
-    height: 95vh;
-    background: linear-gradient(
-        to right bottom,
-        $light-green,
-        $dark-green
-      ),
-      url("../img/hero.jpg");
-    background-size: cover; /* Tamanho se adapta à tela */
-    background-position: top;
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 75vh,
-      0 100%
-    ); /* Posições X e Y de cada vértice do polígono, contando do superior da esquerda em sentido horário */
-    position: relative;
-  }
-  
-  .header__logo-box {
-    position: absolute; /* Relativo ao header, pois está dentro dele */
-    top: 4rem;
-    left: 4rem;
-  }
-  
-  .header__logo {
-    height: 3.5rem;
-  }
-  
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(
-      -50%,
-      -50%
-    ); /* Alteração do ponto de movimentação da caixa */
-    text-align: center;
-  }
-  
-  /* h1 é o heading mais importante para SEO */
-  .heading-primary {
-    margin-bottom: 6rem;
-    text-transform: uppercase;
-    color: $white;
-  }
-  
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 0.3s ease-out; /* Ativação da animação criada*/
-    backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
-  }
-  
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-    animation: moveInRight 0.3s ease-out; /* Ativação da animação criada*/
-    backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
-  }
-  
-  @keyframes moveInLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-10rem);
-    }
-  
-    80% {
-      transform: translateX(1rem);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
-  
-  @keyframes moveInRight {
-    0% {
-      opacity: 0;
-      transform: translateX(10rem);
-    }
-  
-    80% {
-      transform: translateX(-1rem);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
-  
-  .btn:link,
-  .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 1.6rem;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 5rem;
-    transition: all 0.2s ease-in-out;
-    position: relative; /* Para o efeito hover do botão novo que fica atrás */
-  }
-  
-  .btn:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  }
-  
-  .btn:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  }
-  
-  .btn--white {
-    background-color: $white;
-    color: $gray;
-  }
-  
-  .btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%; /* Referente ao button */
-    width: 100%; /* Referente ao button */
-    border-radius: 5rem;
-    position: absolute; /* Relativo ao botão */
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .btn--white::after {
-    background-color: $white;
-  }
-  
-  .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
+$light-green: rgba(126, 213, 111, 0.8);
+$medium-green: rgba(85, 197, 122, 1);
+$dark-green: rgba(40, 180, 133, 0.8);
+$white: rgb(255, 255, 255);
+$gray: rgb(119, 119, 119);
+$black: rgb(0, 0, 0);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* Porcentagem do valor inicial ou de qualquer valor inserido pelo usuário */
+}
+
+/* Informações colocadas no body para poderem ser herdadas */
+body {
+  padding: 3rem;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $gray;
+}
+
+.header {
+  height: 95vh;
+  background: linear-gradient(to right bottom, $light-green, $dark-green),
+    url("../img/hero.jpg");
+  background-size: cover; /* Tamanho se adapta à tela */
+  background-position: top;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /* Posições X e Y de cada vértice do polígono, contando do superior da esquerda em sentido horário */
+  position: relative;
+}
+
+.header__logo-box {
+  position: absolute; /* Relativo ao header, pois está dentro dele */
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  height: 3.5rem;
+}
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Alteração do ponto de movimentação da caixa */
+  text-align: center;
+}
+
+/* h1 é o heading mais importante para SEO */
+.heading-primary {
+  margin-bottom: 6rem;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation: moveInLeft 0.3s ease-out; /* Ativação da animação criada*/
+  backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem;
+  animation: moveInRight 0.3s ease-out; /* Ativação da animação criada*/
+  backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
+}
+
+@keyframes moveInLeft {
+  0% {
     opacity: 0;
+    transform: translateX(-10rem);
   }
-  
-  @keyframes moveInBottom {
-    0% {
-      opacity: 0;
-      transform: translateY(3rem);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
+
+  80% {
+    transform: translateX(1rem);
   }
-  
-  .btn--animated {
-    animation: moveInBottom 0.3s ease-out 0.5s;
-    animation-fill-mode: backwards; /* Automaticamente coloca os estilos do estado 0% antes de a animação começar */
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
-  
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 5rem;
+  transition: all 0.2s ease-in-out;
+  position: relative; /* Para o efeito hover do botão novo que fica atrás */
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba($black, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba($black, 0.2);
+}
+
+.btn--white {
+  background-color: $white;
+  color: $gray;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%; /* Referente ao button */
+  width: 100%; /* Referente ao button */
+  border-radius: 5rem;
+  position: absolute; /* Relativo ao botão */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn--white::after {
+  background-color: $white;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn--animated {
+  animation: moveInBottom 0.3s ease-out 0.5s;
+  animation-fill-mode: backwards; /* Automaticamente coloca os estilos do estado 0% antes de a animação começar */
+}
