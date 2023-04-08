@@ -30,23 +30,20 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* Posições X e Y de cada vértice do polígono, contando do superior da esquerda em sentido horário */
   position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  /* Relativo ao header, pois está dentro dele */
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* Alteração do ponto de movimentação da caixa */
-  text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    /* Relativo ao header, pois está dentro dele */
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Alteração do ponto de movimentação da caixa */
+    text-align: center; }
 
 /* h1 é o heading mais importante para SEO */
 .heading-primary {
