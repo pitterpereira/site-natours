@@ -71,24 +71,24 @@ body {
   margin-bottom: 6rem;
   text-transform: uppercase;
   color: $white;
-}
 
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation: moveInLeft 0.3s ease-out; /* Ativação da animação criada*/
-  backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
-}
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 0.3s ease-out; /* Ativação da animação criada*/
+    backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
+  }
 
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.74rem;
-  animation: moveInRight 0.3s ease-out; /* Ativação da animação criada*/
-  backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    animation: moveInRight 0.3s ease-out; /* Ativação da animação criada*/
+    backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
+  }
 }
 
 @keyframes moveInLeft {
@@ -123,53 +123,60 @@ body {
   }
 }
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 1.6rem;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 5rem;
-  transition: all 0.2s ease-in-out;
-  position: relative; /* Para o efeito hover do botão novo que fica atrás */
-}
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 5rem;
+    transition: all 0.2s ease-in-out;
+    position: relative; /* Para o efeito hover do botão novo que fica atrás */
 
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba($black, 0.2);
-}
+    &:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1rem 2rem rgba($black, 0.2);
 
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba($black, 0.2);
-}
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+  }
 
-.btn--white {
-  background-color: $white;
-  color: $gray;
-}
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($black, 0.2);
+  }
 
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%; /* Referente ao button */
-  width: 100%; /* Referente ao button */
-  border-radius: 5rem;
-  position: absolute; /* Relativo ao botão */
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.3s ease-in-out;
-}
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%; /* Referente ao button */
+    width: 100%; /* Referente ao button */
+    border-radius: 5rem;
+    position: absolute; /* Relativo ao botão */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+  }
 
-.btn--white::after {
-  background-color: $white;
-}
+  &--white {
+    background-color: $white;
+    color: $gray;
 
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
+    &::after {
+      background-color: $white;
+    }
+  }
+
+  &--animated {
+    animation: moveInBottom 0.3s ease-out 0.5s;
+    animation-fill-mode: backwards; /* Automaticamente coloca os estilos do estado 0% antes de a animação começar */
+  }
 }
 
 @keyframes moveInBottom {
@@ -182,9 +189,4 @@ body {
     opacity: 1;
     transform: translate(0);
   }
-}
-
-.btn--animated {
-  animation: moveInBottom 0.3s ease-out 0.5s;
-  animation-fill-mode: backwards; /* Automaticamente coloca os estilos do estado 0% antes de a animação começar */
 }
