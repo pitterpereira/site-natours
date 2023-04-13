@@ -5,6 +5,7 @@
 }
 
 .section-features {
+  margin-top: -10rem;
   padding: 20rem 0;
   background: linear-gradient(to right bottom, $light-green, $dark-green),
     url("../img/nat-4.jpg");
@@ -16,4 +17,10 @@
     100% 75vh,
     0 100%
   ); /* Posições X e Y de cada vértice do polígono, contando do superior da esquerda em sentido horário */
+  transform: skewY(-7deg);
+
+  // Seleciona todos os filhos diretos da section-features
+  & > * {
+    transform: skewY(7deg);
+  }
 }

@@ -5,10 +5,16 @@
   text-align: center;
   border-radius: 0.3rem;
   box-shadow: 0 1.5rem 4rem rgba($black, 0.15);
+  transition: transform 0.3s;
 
   &__icon {
     font-size: 6rem;
     margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
   }
 
   &__text {

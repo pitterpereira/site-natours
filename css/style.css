@@ -210,10 +210,14 @@ body {
   padding: 2.5rem;
   text-align: center;
   border-radius: 0.3rem;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s; }
   .feature-box__icon {
     font-size: 6rem;
-    margin-bottom: 0.5rem; }
+    margin-bottom: 0.5rem;
+    display: inline-block; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
 
 .row {
   max-width: 114rem;
@@ -285,10 +289,14 @@ body {
   margin-top: -25vh; }
 
 .section-features {
+  margin-top: -10rem;
   padding: 20rem 0;
   background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
   background-size: cover;
   /* Tamanho se adapta à tela */
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* Posições X e Y de cada vértice do polígono, contando do superior da esquerda em sentido horário */ }
+  /* Posições X e Y de cada vértice do polígono, contando do superior da esquerda em sentido horário */
+  transform: skewY(-7deg); }
+  .section-features > * {
+    transform: skewY(7deg); }
