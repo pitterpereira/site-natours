@@ -1,71 +1,86 @@
 body {
-  padding: 3rem;
-  box-sizing: border-box;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.7;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /*font-size: 16px;*/
+    line-height: 1.7;
+    color: $color-grey-dark;
 }
 
-/* h1 é o heading mais importante para SEO */
 .heading-primary {
-  margin-bottom: 6rem;
-  text-transform: uppercase;
-  color: $white;
+    color: $color-white;
+    text-transform: uppercase;
 
-  &--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 0.3s ease-out; /* Ativação da animação criada*/
-    backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
-  }
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
 
-  &--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-    animation: moveInRight 0.3s ease-out; /* Ativação da animação criada*/
-    backface-visibility: hidden; /* Corrige falha de ajuste da animação*/
-  }
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+    
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-family: 5rem;
+        }
+        /*
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        */
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        animation: moveInRight 1s ease-out;
+
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
+    }
 }
 
 .heading-secondary {
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  display: inline-block;
-  background-image: linear-gradient(
-    to right,
-    $light-green,
-    $dark-green
-  ); // Seta a cor gradiente no fundo
-  -webkit-background-clip: text; // Seta a cor para ser recortada no formato do texto
-  background-clip: text;
-  color: transparent; // Torna o texto transparente para o gradiente poder aparecer
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s;
 
-  letter-spacing: 0.2rem;
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
 
-  transition: all 0.2s;
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
 
-  &:hover {
-    transform: skewY(2deg) skewX(15deg);
-    text-shadow: 0.5rem 1rem 2rem rgba($black, 0.2);
-  }
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
 }
 
 .heading-tertiary {
-  font-size: 1.6rem;
-  font-weight: 700;
-  text-transform: uppercase;
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .paragraph {
-  font-size: 1.6rem;
+    font-size: $default-font-size;
 
-  &:not(:last-child) {
-    margin-bottom: 3rem;
-  }
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
 }
